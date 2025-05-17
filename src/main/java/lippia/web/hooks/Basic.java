@@ -8,14 +8,16 @@ import lippia.web.listeners.DriverValidatorListener;
 
 public class Basic {
 
-    @Before( order = 0 )
-    public void beforeScenario( Scenario scenario ) {
-        DriverManager.getDriverInstance().register( new DriverValidatorListener() );
+    @Before(order = 0)
+    public void beforeScenario(Scenario scenario) {
+        DriverManager.getDriverInstance().register(new DriverValidatorListener());
     }
 
-    @After( order = 0 )
-    public void afterScenario( Scenario scenario){
-        DriverManager.getDriverInstance().quit();
+     /*@After(order = 0)
+    public void afterScenario(Scenario scenario) {
+        DriverManager.resetDriver();
+    }*/
+
+
     }
 
-}

@@ -3,43 +3,75 @@ package lippia.web.steps;
 import com.crowdar.core.PageSteps;
 import io.cucumber.java.en.*;
 import lippia.web.services.PracticeHomeService;
+import lippia.web.services.ProductService;
 
 public class PracticeHomeSteps extends PageSteps {
 
-//    @Given("^The client is on google page$")
-//    public void home() {
-//        GoogleHomeService.navegarWeb();
-//    }
-//
-//    @Given("^The client isn't on google page$")
-//    public void isNotHome() {
-//        GoogleHomeService.navegarWeb();
-//        throw new RuntimeException("the client is not on google page");
-//    }
-//
-//    @When("^The client search for word (.*)$")
-//    public void search(String criteria) {
-//        GoogleHomeService.enterSearchCriteria(criteria);
-//        GoogleHomeService.clickSearchButton();
-//    }
-//
-//    @Then("The client verify that results are shown properly")
-//    public void statVerification() {
-//        GoogleSearchResultService.verifyResults();
-//    }
-
-    @Given("Ingreso a la pagina de practica")
-    public void ingresoALaPaginaDePractica() {
-        PracticeHomeService.navegarWeb();
+    @Given("The client is in the Home Page")
+    public void theClientIsInTheHomePage() {
+        PracticeHomeService.navigateToHomePage();
     }
 
-    @When("Realizo click en shop")
-    public void realizoClickEnNewArrivals() {
-        PracticeHomeService.clickShopButton();
+    @When("The client tap on Shop menu button")
+    public void theClientTapOnShopMenuButton() {
+        ProductService.clickShop();
     }
 
-    @Then("Se muestra la pagina de shop")
-    public void seMuestraLaPaginaDeShop() {
-        PracticeHomeService.verificarShopPage();
+    @And("The client tap on Home menu button")
+    public void theClientTapOnHomeMenuButton() {
+        ProductService.clickHome();
+
+    }
+
+    @And("The client click the Add to Basket button")
+    public void theClientClickTheAddToBasketButton() {
+        ProductService.clickAddToBasket();
+    }
+
+
+
+    @Then("The client view the Home Page has '(.*)' Sliders only")
+    public void theClientViewTheHomePageHasThreeSlidersOnly(int qSliders) {
+        PracticeHomeService.checksliders(qSliders);
+    }
+
+
+    @Then("The client view the Home Page has '(.*)' Arrivals only")
+    public void theClientViewTheHomePageHasArrivalsOnly(int qArrivals) {
+        PracticeHomeService.checksArrivals(qArrivals);
+
+    }
+
+    @When("The client click in the image (.*) in the Arrivals")
+    public void theClientClickInTheImageBookNameInTheArrivals(String book) {
+        ProductService.clickBookName(book);
+
+    }
+
+    @And("The client increments Quantity value to '(.*)'")
+    public void theClientIncrementsQuantityValueTo(int quantity) {
+        ProductService.setBookQuantity(quantity);
+
+
+
+
+    }
+
+    @And("The client click on View Basket button")
+    public void theClientClickOnViewBasketButton() {
+        ProductService.clickViewBasket();
+    }
+
+    @And("The client click on Update Basket to reflect changes")
+    public void theClientClickOnUpdateBasketToReflectChanges() {
+        ProductService.clickUpdateBasket();
+    }
+
+
+    @Then("The Quantity change to '(.*)' value")
+    public void theQuantityChangeToBooksQuantityValue(int quantity) {
+        ProductService.checkQuantity(quantity);
+
+
     }
 }
