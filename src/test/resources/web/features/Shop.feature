@@ -30,8 +30,68 @@ Feature: Shop
 
   @tpFinal
 
-  Scenario: Shop-Add to Basket-View Basket through Item link
+  Scenario Outline: Shop-Add to Basket-View Basket through Item link
+    When The client click the Add to Basket button of <BookName> in Shop Page
+    And The client click on View Basket button of that <BookName> in Shop Page
+      #Este paso sería el 6 de la lista, solo que no estaba bien especificado el "item link"
+    #En el siguiente step, que sería el 14 de la lista, en la lista está mal redactado, indica que Total debe ser siempre más chico que SubTotal, porque
+    #se agregan impuestos, y es justamente al revés. Al agregarle impuestos al SubTotal, Total es más grande.
+    And Subtotal is Lower than Total because Taxes
+    And The client click the Proceed to Checkout button
+    And The client fill his details in billing details form and select the <payment> method
+    And The coupon textbox is clickable
+    And The client click the Place Order button
+    Then The client is in the Order Received page
+    Examples:
+      | BookName                  | payment                 |
+      | Android Quick Start Guide | Direct Bank Transfer    |
+      | Android Quick Start Guide | Check Payments          |
+      | Android Quick Start Guide | Cash on Delivery        |
+      | Android Quick Start Guide | PayPal Express Checkout |
+
+
+    Examples:
+      | BookName                         | payment                 |
+      | Functional Programming in JS     | Direct Bank Transfer    |
+      | Functional Programming in JS     | Check Payments          |
+      | Functional Programming in JS     | Cash on Delivery        |
+      | Functional Programming in JS     | PayPal Express Checkout |
+      | HTML5 Forms                      | Direct Bank Transfer    |
+      | HTML5 Forms                      | Check Payments          |
+      | HTML5 Forms                      | Cash on Delivery        |
+      | HTML5 Forms                      | PayPal Express Checkout |
+      | HTML5 WebApp Develpment          | Direct Bank Transfer    |
+      | HTML5 WebApp Develpment          | Check Payments          |
+      | HTML5 WebApp Develpment          | Cash on Delivery        |
+      | HTML5 WebApp Develpment          | PayPal Express Checkout |
+      | Selenium Ruby                    | Direct Bank Transfer    |
+      | Selenium Ruby                    | Check Payments          |
+      | Selenium Ruby                    | Cash on Delivery        |
+      | Selenium Ruby                    | PayPal Express Checkout |
+      | Mastering JavaScript             | Direct Bank Transfer    |
+      | Mastering JavaScript             | Check Payments          |
+      | Mastering JavaScript             | Cash on Delivery        |
+      | Mastering JavaScript             | PayPal Express Checkout |
+      | JS Data Structures and Algorithm | Direct Bank Transfer    |
+      | JS Data Structures and Algorithm | Check Payments          |
+      | JS Data Structures and Algorithm | Cash on Delivery        |
+      | JS Data Structures and Algorithm | PayPal Express Checkout |
+      | Thinking in HTML                 | Direct Bank Transfer    |
+      | Thinking in HTML                 | Check Payments          |
+      | Thinking in HTML                 | Cash on Delivery        |
+      | Thinking in HTML                 | PayPal Express Checkout |
 
 
   Scenario: Shop-Add to Basket-View Basket-Tax Functionality
-
+    When The client click the Add to Basket button of one Book in Shop Page
+    And The client click on View Basket button of that Book in Shop Page
+      #Este paso sería el 6 de la lista, solo que no estaba bien especificado el "item link"
+    #En el siguiente step, que sería el 14 de la lista, en la lista está mal redactado, indica que Total debe ser siempre más chico que SubTotal, porque
+    #se agregan impuestos, y es justamente al revés. Al agregarle impuestos al SubTotal, Total es más grande.
+    And Subtotal is Lower than Total because Taxes
+    And The client click the Proceed to Checkout button
+    And The client fill his details in billing details form and select India country
+    And The client fill his details in billing details form and select Argentina country
+    Then The client check the taxes are lower in India
+    #Seg+un la lista de Test Cases, deberíamos chequear que India tenga impuesto del 2% y otros países del 5%, lo cual no puede validarse, ya que la página
+    #Tiene impuestos de 5% sobre India y 12.5% sobre otros países.

@@ -73,8 +73,6 @@ Feature: HomePage
     And The client click the Add to Basket button
     And The client click on View Basket button
       #Este paso sería el 12 de la lista, solo que no estaba bien especificado el "item link"
-    And The client increments Quantity value to '<BooksQuantity>'
-    And The client click on Update Basket to reflect changes
     #En el siguiente step, que sería el 14 de la lista, en la lista está mal redactado, indica que Total debe ser siempre más chico que SubTotal, porque
     #se agregan impuestos, y es justamente al revés. Al agregarle impuestos al SubTotal, Total es más grande.
     And Subtotal is Lower than Total because Taxes
@@ -85,12 +83,21 @@ Feature: HomePage
     Then The client is in the Order Received page
 
     Examples:
-      | BookName      | BooksQuantity | payment |
-      | Selenium Ruby | 4             |         |
+      | BookName      | payment                 |
+      | Selenium Ruby | Direct Bank Transfer    |
+      | Selenium Ruby | Check Payments          |
+      | Selenium Ruby | Cash on Delivery        |
+      | Selenium Ruby | PayPal Express Checkout |
 
     Examples:
-      | BookName             | BooksQuantity | payment |
-      | Thinking in HTML     | 4             |         |
-      | Mastering JavaScript | 4             |         |
+      | BookName             | payment                 |
+      | Thinking in HTML     | Direct Bank Transfer    |
+      | Thinking in HTML     | Check Payments          |
+      | Thinking in HTML     | Cash on Delivery        |
+      | Thinking in HTML     | PayPal Express Checkout |
+      | Mastering JavaScript | Direct Bank Transfer    |
+      | Mastering JavaScript | Check Payments          |
+      | Mastering JavaScript | Cash on Delivery        |
+      | Mastering JavaScript | PayPal Express Checkout |
     #Metodo de pago PayPal no funciona, algo esperable de una página que simula una compra como tal
 
