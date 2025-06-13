@@ -4,7 +4,7 @@ Feature: Shop
     Given The client is in the Home Page
     And The client is in Shop Menu
 
-  @ShopCategories
+  @ShopCategories @TP4
   Scenario Outline: ShopProductCategories
     When The client click on '<category>' button
     Then The client is in the '<category>' Page
@@ -15,7 +15,7 @@ Feature: Shop
       | JavaScript |
       | selenium   |
 
-  @ShopSorting
+  @ShopSorting @TP4
   Scenario Outline: Sorting
     When The client click on sorting '<SortCategory>' button
     Then The client see the Shop Page sorting by '<SortCategory>'
@@ -26,3 +26,12 @@ Feature: Shop
       | Sort by newness            |
       | Sort by price: low to high |
       | Sort by price: high to low |
+
+
+  @tpFinal
+
+  Scenario: Shop-Add to Basket-View Basket through Item link
+
+
+  Scenario: Shop-Add to Basket-View Basket-Tax Functionality
+

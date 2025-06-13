@@ -184,4 +184,21 @@ public class ProductService {
 
         }
     }
+
+    public static void enterRegisterEmail(String emails) {
+        var emailTextbox = WebActionManager.getElement(ProductConstants.REGISTER_EMAIL_TEXTBOX);
+        emailTextbox.click();
+        emailTextbox.sendKeys(emails);
+    }
+
+    public static void enterRegisterPassword(String passwords) {
+        var passwordTextbox = WebActionManager.getElement(ProductConstants.REGISTER_PASSWORD_TEXTBOX);
+        passwordTextbox.click();
+        passwordTextbox.sendKeys(passwords);
+    }
+
+    public static void checkRegisterkMessage(String message) {
+        var errorMessages = WebActionManager.getText(ProductConstants.ERROR_MESSAGE);
+        Assert.assertEquals(message, errorMessages);
+    }
 }

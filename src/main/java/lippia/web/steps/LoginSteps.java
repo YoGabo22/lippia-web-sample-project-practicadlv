@@ -36,8 +36,8 @@ public class LoginSteps {
         ProductService.enterPassword(password);
     }
 
-    @Then("The registration must fail with a warning message '(.*)'")
-    public void theRegistrationMustFailWithAWarningMessageMessage(String message) {
+    @Then("The Login must fail with a warning message '(.*)'")
+    public void theLoginMustFailWithAWarningMessageMessage(String message) {
         ProductService.checkMessage(message);
 
     }

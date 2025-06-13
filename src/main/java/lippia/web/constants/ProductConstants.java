@@ -27,4 +27,6 @@ public class ProductConstants {
     public static final String NEWNESS_DROPDOWN_BUTTON = "xpath://*[@id=\"content\"]/form/select/option[4]";
     public static final String LOWTOHIGH_DROPDOWN_BUTTON = "xpath://*[@id=\"content\"]/form/select/option[5]";
     public static final String HIGHTOLOW_DROPDOWN_BUTTON = "xpath://*[@id=\"content\"]/form/select/option[6]";
+    public static final String REGISTER_EMAIL_TEXTBOX = "xpath://*[@id=\"reg_email\"]";
+    public static final String REGISTER_PASSWORD_TEXTBOX = "xpath://*[@id=\"reg_password\"]";
 }
