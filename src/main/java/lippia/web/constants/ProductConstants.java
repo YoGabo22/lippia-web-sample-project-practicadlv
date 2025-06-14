@@ -29,4 +29,22 @@ public class ProductConstants {
     public static final String HIGHTOLOW_DROPDOWN_BUTTON = "xpath://*[@id=\"content\"]/form/select/option[6]";
     public static final String REGISTER_EMAIL_TEXTBOX = "xpath://*[@id=\"reg_email\"]";
     public static final String REGISTER_PASSWORD_TEXTBOX = "xpath://*[@id=\"reg_password\"]";
+    public static final String SUBTOTAL_VALUE = "xpath://*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span";
+    public static final String TOTAL_VALUE = "xpath://*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/td/strong/span";
+    public static final String CHECKOUT_BUTTON = "xpath://*[@id=\"page-34\"]/div/div[1]/div/div/div/a";
+    public static final String FIRST_NAME_TEXTBOX = "xpath://*[@id=\"billing_first_name\"]";
+    public static final String LAST_NAME_TEXTBOX = "xpath://*[@id=\"billing_last_name\"]";
+    public static final String EMAIL_BILL_TEXTBOX = "xpath://*[@id=\"billing_email\"]";
+    public static final String PHONE_TEXTBOX = "xpath://*[@id=\"billing_phone\"]";
+    public static final String ADDRESS_TEXTBOX = "xpath://*[@id=\"billing_address_1\"]";
+    public static final String TOWN_TEXTBOX = "xpath://*[@id=\"billing_city\"]";
+    public static final String POSTCODE_TEXTBOX = "xpath://*[@id=\"billing_postcode\"]";
+    public static final String DIRECT_BANK_TRANSFER_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[1]";
+    public static final String CHECK_PAYMENT_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[2]";
+    public static final String CASH_ON_DELIVERY_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[3]";
+    public static final String PAYPAL_EXPRESS_CHECKOUT_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[4]";
+    public static final String CHECKOUT_COUPON_BUTTON = "xpath://*[@id=\"page-35\"]/div/div[1]/div[2]/a";
+    public static final String CHECKOUT_COUPON_TEXTBOX = "xpath://*[@id=\"coupon_code\"]";
+    public static final String PLACE_ORDER_BUTTON = "xpath://*[@id=\"place_order\"]";
+    public static final String ORDER_RECEIVED_MESSAGE = "xpath://*[@id=\"page-35\"]/div/div[1]/p[1]";
 }

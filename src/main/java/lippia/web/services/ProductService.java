@@ -201,4 +201,57 @@ public class ProductService {
         var errorMessages = WebActionManager.getText(ProductConstants.ERROR_MESSAGE);
         Assert.assertEquals(message, errorMessages);
     }
+
+    public static void checkTotal(int totalBuy) {
+        var subtotalPrice = Integer.parseInt(WebActionManager.getText(ProductConstants.SUBTOTAL_VALUE));
+        var totalPrice = Integer.parseInt(WebActionManager.getText(ProductConstants.TOTAL_VALUE));
+        Assert.assertNotEquals(subtotalPrice, totalPrice);
+
+    }
+
+    public static void clickCheckout() {
+        WebActionManager.getElement(ProductConstants.CHECKOUT_BUTTON).click();
+    }
+
+    public static void fillDetails() {
+        WebActionManager.getElement(ProductConstants.FIRST_NAME_TEXTBOX).sendKeys("Juan");
+        WebActionManager.getElement(ProductConstants.LAST_NAME_TEXTBOX).sendKeys("Perez");
+        WebActionManager.getElement(ProductConstants.EMAIL_BILL_TEXTBOX).sendKeys("juanperez@gmail.com");
+        WebActionManager.getElement(ProductConstants.PHONE_TEXTBOX).sendKeys("44551884438");
+        WebActionManager.getElement(ProductConstants.ADDRESS_TEXTBOX).sendKeys("Calle Ejemplar 1234");
+        WebActionManager.getElement(ProductConstants.TOWN_TEXTBOX).sendKeys("Ciudad");
+        WebActionManager.getElement(ProductConstants.POSTCODE_TEXTBOX).sendKeys("5500");
+    }
+
+    public static void clickPayment(String payment) {
+        switch (payment) {
+            case "Direct Bank Transfer":
+                WebActionManager.getElement(ProductConstants.DIRECT_BANK_TRANSFER_BUTTON).click();
+                break;
+            case "Check Payments":
+                WebActionManager.getElement(ProductConstants.CHECK_PAYMENT_BUTTON).click();
+                break;
+            case "Cash on Delivery":
+                WebActionManager.getElement(ProductConstants.CASH_ON_DELIVERY_BUTTON).click();
+                break;
+            case "PayPal Express Checkout":
+                WebActionManager.getElement(ProductConstants.PAYPAL_EXPRESS_CHECKOUT_BUTTON).click();
+                break;
+        }
+    }
+
+    public static void checkCuponClick() {
+        WebActionManager.getElement(ProductConstants.CHECKOUT_COUPON_BUTTON).click();
+        Assert.assertTrue(WebActionManager.getElement(ProductConstants.CHECKOUT_COUPON_TEXTBOX).isDisplayed());
+
+
+    }
+
+    public static void clickPlaceOrder() {
+        WebActionManager.getElement(ProductConstants.PLACE_ORDER_BUTTON).click();
+    }
+
+    public static void checkOrderDetails() {
+        Assert.assertEquals(WebActionManager.getText(ProductConstants.ORDER_RECEIVED_MESSAGE), "Thank you. Your order has been received.");
+    }
 }

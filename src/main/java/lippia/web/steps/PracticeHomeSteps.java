@@ -74,4 +74,40 @@ public class PracticeHomeSteps extends PageSteps {
 
 
     }
+
+    @And("Subtotal is Lower than Total because Taxes")
+    public void subtotalIsLowerThanTotalBecauseTaxes(int totalBuy) {
+        ProductService.checkTotal(totalBuy);
+
+    }
+
+    @And("The client click the Proceed to Checkout button")
+    public void theClientClickTheProceedToCheckoutButton() {
+        ProductService.clickCheckout();
+    }
+
+    @And("The client fill his details in billing details form")
+    public void theClientFillHisDetailsInBillingDetailsForm() {
+        ProductService.fillDetails();
+    }
+
+    @And("select the (.*) method")
+    public void selectThePaymentMethod(String payment) {
+        ProductService.clickPayment(payment);
+    }
+
+    @Then("The coupon textbox is clickable")
+    public void theCouponTextboxIsClickable() {
+        ProductService.checkCuponClick();
+    }
+
+    @And("The client click the Place Order button")
+    public void theClientClickThePlaceOrderButton() {
+        ProductService.clickPlaceOrder();
+    }
+
+    @Then("The client is in the Order Received page")
+    public void theClientIsInTheOrderReceivedPage() {
+        ProductService.checkOrderDetails();
+    }
 }
