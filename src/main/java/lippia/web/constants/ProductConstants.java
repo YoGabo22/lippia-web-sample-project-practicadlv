@@ -47,4 +47,5 @@ public class ProductConstants {
     public static final String CHECKOUT_COUPON_TEXTBOX = "xpath://*[@id=\"coupon_code\"]";
     public static final String PLACE_ORDER_BUTTON = "xpath://*[@id=\"place_order\"]";
     public static final String ORDER_RECEIVED_MESSAGE = "xpath://*[@id=\"page-35\"]/div/div[1]/p[1]";
+    public static final String LOGOUT_BUTTON = "xpath://*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a";
 }

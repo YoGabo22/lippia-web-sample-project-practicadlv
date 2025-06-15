@@ -28,17 +28,21 @@ Feature: MyAccountLogin
 
   @tpFinal
 
+
+  @LoginErrorCaseSensitive
   Scenario: Login-Handles case sensitive
     When The client enters 'GABOACADEMY@gmail.com' in the email textbox
     And The client enters '!CLAVESEGURA2025' in the password textbox
     And The client click the Login button
     Then The registration must fail with a warning message "Error: The password you entered for the username GABOACADEMY@gmail.com is incorrect. Lost your password?"
 
+
+  @LoginAuthentication
   Scenario: Login-Authentication
     When The client enters 'gaboacademy@gmail.com' in the email textbox
     And The client enters '!ClaveSegura2025' in the password textbox
     And The client click the Login button
-    And The client click the SignOut button
+    And The client click the Logout button
     And The client press Back button
     And The client is in 'My Account' Menu
     Then The email textbox is clickable

@@ -57,7 +57,7 @@ Feature: HomePage
     And select the <payment> method
     Then The coupon textbox is clickable
 
-    @Do
+
     Examples:
       | BookName      | payment                 |
       | Selenium Ruby | Direct Bank Transfer    |

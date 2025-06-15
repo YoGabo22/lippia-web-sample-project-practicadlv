@@ -256,4 +256,17 @@ public class ProductService {
     public static void checkOrderDetails() {
         Assert.assertEquals(WebActionManager.getText(ProductConstants.ORDER_RECEIVED_MESSAGE), "Thank you. Your order has been received.");
     }
+
+    public static void clickLogout() {
+        WebActionManager.getElement(ProductConstants.LOGOUT_BUTTON).click();
+    }
+
+    public static void navigateBack() {
+        DriverManager.getDriverInstance().navigate().back();
+    }
+
+    public static void checkEmailTextBox() {
+        WebActionManager.getElement(ProductConstants.EMAIL_TEXTBOX).click();
+        Assert.assertTrue(WebActionManager.getElement(ProductConstants.EMAIL_TEXTBOX).isEnabled());
+    }
 }

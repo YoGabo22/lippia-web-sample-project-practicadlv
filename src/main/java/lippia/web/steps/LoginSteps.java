@@ -41,4 +41,19 @@ public class LoginSteps {
         ProductService.checkMessage(message);
 
     }
+
+    @And("The client click the Logout button")
+    public void theClientClickTheLogoutButton() {
+        ProductService.clickLogout();
+    }
+
+    @And("The client press Back button")
+    public void theClientPressBackButton() {
+        ProductService.navigateBack();
+    }
+
+    @Then("The email textbox is clickable")
+    public void theEmailTextboxIsClickable() {
+        ProductService.checkEmailTextBox();
+    }
 }
