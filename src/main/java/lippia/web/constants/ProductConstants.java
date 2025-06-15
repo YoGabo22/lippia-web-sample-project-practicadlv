@@ -48,4 +48,13 @@ public class ProductConstants {
     public static final String PLACE_ORDER_BUTTON = "xpath://*[@id=\"place_order\"]";
     public static final String ORDER_RECEIVED_MESSAGE = "xpath://*[@id=\"page-35\"]/div/div[1]/p[1]";
     public static final String LOGOUT_BUTTON = "xpath://*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a";
+    public static final String ANDROID_QUICK_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[1]/a[2]";
+    public static final String FUNCTIONAL_PROGRAMMING_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[2]/a[2]";
+    public static final String HTML5_FORMS_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[3]/a[2]";
+    public static final String HTML5_WEBAPP_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[4]/a[2]";
+    public static final String SELENIUM_RUBY_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[7]/a[2]";
+    public static final String MASTERING_JAVASCRIPT_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[6]/a[2]";
+    public static final String JS_DATA_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[5]/a[2]";
+    public static final String THINKING_IN_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[8]/a[2]";
+    public static final String BASKET_MENU_BUTTON = "xpath://*[@id=\"wpmenucartli\"]/a";
 }

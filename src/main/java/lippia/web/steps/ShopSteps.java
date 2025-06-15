@@ -39,4 +39,14 @@ public class ShopSteps extends PageSteps {
     public void theClientSeeTheShopPageSortingBySortCategory(String selectedSorting) {
         ProductService.checkSorting(selectedSorting);
     }
+
+    @When("The client click the Add to Basket button of (.*) in Shop Page")
+    public void theClientClickTheAddToBasketButtonOfBookNameInShopPage(String shopBook) {
+        ProductService.clickSopBook(shopBook);
+    }
+
+    @And("The client click on Basket button in Shop Page")
+    public void theClientClickOnBasketButtonInShopPage() {
+        ProductService.clickBasket();
+    }
 }

@@ -214,7 +214,7 @@ public class ProductService {
     }
 
     public static void fillDetails() {
-       WebActionManager.getElement(ProductConstants.FIRST_NAME_TEXTBOX);
+        WebActionManager.getElement(ProductConstants.FIRST_NAME_TEXTBOX).sendKeys("Juan");
         WebActionManager.getElement(ProductConstants.LAST_NAME_TEXTBOX).sendKeys("Perez");
         WebActionManager.getElement(ProductConstants.EMAIL_BILL_TEXTBOX).sendKeys("juanperez@gmail.com");
         WebActionManager.getElement(ProductConstants.PHONE_TEXTBOX).sendKeys("44551884438");
@@ -268,5 +268,38 @@ public class ProductService {
     public static void checkEmailTextBox() {
         WebActionManager.getElement(ProductConstants.EMAIL_TEXTBOX).click();
         Assert.assertTrue(WebActionManager.getElement(ProductConstants.EMAIL_TEXTBOX).isEnabled());
+    }
+
+    public static void clickSopBook(String shopBook) {
+        switch (shopBook) {
+            case "Android Quick Start Guide":
+                WebActionManager.getElement(ProductConstants.ANDROID_QUICK_SHOP_BUTTON).click();
+                break;
+            case "Functional Programming in JS":
+                WebActionManager.getElement(ProductConstants.FUNCTIONAL_PROGRAMMING_SHOP_BUTTON).click();
+                break;
+            case " HTML5 Forms":
+                WebActionManager.getElement(ProductConstants.HTML5_FORMS_SHOP_BUTTON).click();
+                break;
+            case "HTML5 WebApp Develpment":
+                WebActionManager.getElement(ProductConstants.HTML5_WEBAPP_SHOP_BUTTON).click();
+                break;
+            case "Selenium Ruby ":
+                WebActionManager.getElement(ProductConstants.SELENIUM_RUBY_SHOP_BUTTON).click();
+                break;
+            case "Mastering JavaScript":
+                WebActionManager.getElement(ProductConstants.MASTERING_JAVASCRIPT_SHOP_BUTTON).click();
+                break;
+            case "JS Data Structures and Algorithm":
+                WebActionManager.getElement(ProductConstants.JS_DATA_SHOP_BUTTON).click();
+                break;
+            case "Thinking in HTML ":
+                WebActionManager.getElement(ProductConstants.THINKING_IN_SHOP_BUTTON).click();
+                break;
+        }
+    }
+
+    public static void clickBasket() {
+        WebActionManager.getElement(ProductConstants.BASKET_MENU_BUTTON).click();
     }
 }
