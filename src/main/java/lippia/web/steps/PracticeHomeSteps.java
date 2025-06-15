@@ -76,8 +76,8 @@ public class PracticeHomeSteps extends PageSteps {
     }
 
     @And("Subtotal is Lower than Total because Taxes")
-    public void subtotalIsLowerThanTotalBecauseTaxes(int totalBuy) {
-        ProductService.checkTotal(totalBuy);
+    public void subtotalIsLowerThanTotalBecauseTaxes() {
+        ProductService.checkTotal();
 
     }
 

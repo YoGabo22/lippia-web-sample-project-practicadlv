@@ -39,10 +39,10 @@ public class ProductConstants {
     public static final String ADDRESS_TEXTBOX = "xpath://*[@id=\"billing_address_1\"]";
     public static final String TOWN_TEXTBOX = "xpath://*[@id=\"billing_city\"]";
     public static final String POSTCODE_TEXTBOX = "xpath://*[@id=\"billing_postcode\"]";
-    public static final String DIRECT_BANK_TRANSFER_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[1]";
-    public static final String CHECK_PAYMENT_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[2]";
-    public static final String CASH_ON_DELIVERY_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[3]";
-    public static final String PAYPAL_EXPRESS_CHECKOUT_BUTTON = "xpath://*[@id=\"payment\"]/ul/li[4]";
+    public static final String DIRECT_BANK_TRANSFER_BUTTON = "xpath://input[@id='payment_method_bacs']";
+    public static final String CHECK_PAYMENT_BUTTON = "xpath://input[@id='payment_method_cheque']";
+    public static final String CASH_ON_DELIVERY_BUTTON = "xpath://input[@id='payment_method_cod']";
+    public static final String PAYPAL_EXPRESS_CHECKOUT_BUTTON = "xpath://input[@id='payment_method_ppec_paypal']";
     public static final String CHECKOUT_COUPON_BUTTON = "xpath://*[@id=\"page-35\"]/div/div[1]/div[2]/a";
     public static final String CHECKOUT_COUPON_TEXTBOX = "xpath://*[@id=\"coupon_code\"]";
     public static final String PLACE_ORDER_BUTTON = "xpath://*[@id=\"place_order\"]";

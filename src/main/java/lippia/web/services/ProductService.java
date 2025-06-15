@@ -202,9 +202,9 @@ public class ProductService {
         Assert.assertEquals(message, errorMessages);
     }
 
-    public static void checkTotal(int totalBuy) {
-        var subtotalPrice = Integer.parseInt(WebActionManager.getText(ProductConstants.SUBTOTAL_VALUE));
-        var totalPrice = Integer.parseInt(WebActionManager.getText(ProductConstants.TOTAL_VALUE));
+    public static void checkTotal() {
+        var subtotalPrice = (WebActionManager.getText(ProductConstants.SUBTOTAL_VALUE)).trim();
+        var totalPrice = (WebActionManager.getText(ProductConstants.TOTAL_VALUE)).trim();
         Assert.assertNotEquals(subtotalPrice, totalPrice);
 
     }
@@ -214,13 +214,15 @@ public class ProductService {
     }
 
     public static void fillDetails() {
-        WebActionManager.getElement(ProductConstants.FIRST_NAME_TEXTBOX).sendKeys("Juan");
+       WebActionManager.getElement(ProductConstants.FIRST_NAME_TEXTBOX);
         WebActionManager.getElement(ProductConstants.LAST_NAME_TEXTBOX).sendKeys("Perez");
         WebActionManager.getElement(ProductConstants.EMAIL_BILL_TEXTBOX).sendKeys("juanperez@gmail.com");
         WebActionManager.getElement(ProductConstants.PHONE_TEXTBOX).sendKeys("44551884438");
         WebActionManager.getElement(ProductConstants.ADDRESS_TEXTBOX).sendKeys("Calle Ejemplar 1234");
         WebActionManager.getElement(ProductConstants.TOWN_TEXTBOX).sendKeys("Ciudad");
-        WebActionManager.getElement(ProductConstants.POSTCODE_TEXTBOX).sendKeys("5500");
+        var postCode = WebActionManager.getElement(ProductConstants.POSTCODE_TEXTBOX);
+        postCode.clear();
+        postCode.sendKeys("5500");
     }
 
     public static void clickPayment(String payment) {
