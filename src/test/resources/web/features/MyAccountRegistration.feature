@@ -1,4 +1,4 @@
-@tpFinal
+@tpFinal @MyAccountRegistration
 Feature: MyAccountRegistration
 
   Background:

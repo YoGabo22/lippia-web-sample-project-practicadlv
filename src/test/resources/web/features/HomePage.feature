@@ -1,3 +1,4 @@
+@HomePage
 Feature: HomePage
 
   Background:

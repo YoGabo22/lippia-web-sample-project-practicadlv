@@ -1,3 +1,4 @@
+@MyAccountLogin
 Feature: MyAccountLogin
 
   Background:

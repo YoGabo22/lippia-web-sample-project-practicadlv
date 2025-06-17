@@ -1,4 +1,4 @@
-@tpFinal
+@tpFinal @MyAccount
 Feature: MyAccount
 
   Background:
