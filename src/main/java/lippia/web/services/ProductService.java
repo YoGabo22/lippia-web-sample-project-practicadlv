@@ -88,6 +88,7 @@ public class ProductService {
 
     public static void clickLogin() {
         WebActionManager.getElement(ProductConstants.LOGIN_BUTTON).click();
+        Assert.assertEquals(WebActionManager.getText(ProductConstants.LOGIN_MESSAGE), "Hello gaboacademy (not gaboacademy? Sign out)");
     }
 
     public static void enterEmail(String emails) {

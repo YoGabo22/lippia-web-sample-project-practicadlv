@@ -38,7 +38,7 @@ Feature: MyAccountLogin
     Then The registration must fail with a warning message "Error: The password you entered for the username GABOACADEMY@gmail.com is incorrect. Lost your password?"
 
 
-  @LoginAuthentication
+  @LoginAuthentication @Do
   Scenario: Login-Authentication
     When The client enters 'gaboacademy@gmail.com' in the email textbox
     And The client enters '!ClaveSegura2025' in the password textbox

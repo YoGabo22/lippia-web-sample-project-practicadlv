@@ -61,4 +61,5 @@ public class ProductConstants {
     public static final String COUNTRY_TEXTBOX = "xpath://*[@id=\"select2-chosen-1\"]";
     public static final String ACCOUNT_DETAILS_BUTTON = "xpath://*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a";
     public static final String CURRENT_PASSWORD_LABEL = "xpath://*[@id=\"page-36\"]/div/div[1]/div/form/fieldset/p[1]/label";
+    public static final String LOGIN_MESSAGE = "xpath://*[@id=\"page-36\"]/div/div[1]/div/p[1]";
 }
