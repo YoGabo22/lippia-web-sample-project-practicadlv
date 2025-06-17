@@ -3,6 +3,7 @@ package lippia.web.services;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.ProductConstants;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 
@@ -11,6 +12,8 @@ public class ProductService {
     static String PrevTotalBasket;
     static String NewNumberBasket;
     static String NewTotalBasket;
+    static String PrevTaxes;
+    static String NewTaxes;
 
     public static void clickAddToBasket() {
         WebActionManager.getElement(ProductConstants.ADD_TO_BASKET_BUTTON).click();
@@ -301,5 +304,19 @@ public class ProductService {
 
     public static void clickBasket() {
         WebActionManager.getElement(ProductConstants.BASKET_MENU_BUTTON).click();
+    }
+
+    public static void checkDefaultTaxes() {
+        PrevTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
+
+    }
+
+    public static void selectArgentinaCountry() {
+        WebActionManager.getElement(ProductConstants.COUNTRY_TEXTBOX).sendKeys("Argentina"+ Keys.RETURN);
+    }
+
+    public static void checkFinalTaxes() {
+        NewTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
+        Assert.assertNotEquals(PrevTaxes, NewTaxes);
     }
 }

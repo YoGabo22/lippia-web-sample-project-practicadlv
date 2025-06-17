@@ -1,15 +1,10 @@
 package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
-import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.ProductConstants;
 import lippia.web.services.ProductService;
-import lippia.web.services.ShopService;
-import lippia.web.services.SuperiorBarNavigationBarService;
 
 public class ShopSteps extends PageSteps {
 
@@ -48,5 +43,21 @@ public class ShopSteps extends PageSteps {
     @And("The client click on Basket button in Shop Page")
     public void theClientClickOnBasketButtonInShopPage() {
         ProductService.clickBasket();
+    }
+
+    @And("Check taxes value")
+    public void checkTaxesValue() {
+        ProductService.checkDefaultTaxes();
+    }
+
+    @And("The client select Argentina country")
+    public void theClientSelectArgentinaCountry() {
+        ProductService.selectArgentinaCountry();
+    }
+
+    @Then("The client check the taxes are lower in India")
+    public void theClientCheckTheTaxesAreLowerInIndia() {
+        ProductService.checkFinalTaxes();
+
     }
 }

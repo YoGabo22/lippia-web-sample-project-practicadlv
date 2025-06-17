@@ -93,7 +93,5 @@ Feature: Shop
     And The client click the Proceed to Checkout button
     And The client fill his details in billing details form
     And Check taxes value
-    And The client select Argentina country and Mendoza State
+    And The client select Argentina country
     Then The client check the taxes are lower in India
-    #Seg+un la lista de Test Cases, deberíamos chequear que India tenga impuesto del 2% y otros países del 5%, lo cual no puede validarse, ya que la página
-    #Tiene impuestos de 5% sobre India y 12.5% sobre otros países.
