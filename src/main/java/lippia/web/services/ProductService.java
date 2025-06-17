@@ -312,11 +312,19 @@ public class ProductService {
     }
 
     public static void selectArgentinaCountry() {
-        WebActionManager.getElement(ProductConstants.COUNTRY_TEXTBOX).sendKeys("Argentina"+ Keys.RETURN);
+        WebActionManager.getElement(ProductConstants.COUNTRY_TEXTBOX).sendKeys("Argentina" + Keys.RETURN);
     }
 
     public static void checkFinalTaxes() {
         NewTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
         Assert.assertNotEquals(PrevTaxes, NewTaxes);
+    }
+
+    public static void clickAccountDetails() {
+        WebActionManager.getElement(ProductConstants.ACCOUNT_DETAILS_BUTTON).click();
+    }
+
+    public static void checkAccountDetails() {
+        Assert.assertEquals(WebActionManager.getText(ProductConstants.CURRENT_PASSWORD_LABEL), "Current Password (leave blank to leave unchanged)");
     }
 }

@@ -59,4 +59,6 @@ public class ProductConstants {
     public static final String BASKET_MENU_BUTTON = "xpath://*[@id=\"wpmenucartli\"]/a";
     public static final String CHECKOUT_TAXES_VALUE = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[2]/td/span";
     public static final String COUNTRY_TEXTBOX = "xpath://*[@id=\"select2-chosen-1\"]";
+    public static final String ACCOUNT_DETAILS_BUTTON = "xpath://*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a";
+    public static final String CURRENT_PASSWORD_LABEL = "xpath://*[@id=\"page-36\"]/div/div[1]/div/form/fieldset/p[1]/label";
 }

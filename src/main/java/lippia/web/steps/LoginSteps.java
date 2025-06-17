@@ -56,4 +56,14 @@ public class LoginSteps {
     public void theEmailTextboxIsClickable() {
         ProductService.checkEmailTextBox();
     }
+
+    @And("The client click the Account Details button")
+    public void theClientClickTheAccountDetailsButton() {
+        ProductService.clickAccountDetails();
+    }
+
+    @Then("The client is in Account Details page")
+    public void theClientIsInAccountDetailsPage() {
+        ProductService.checkAccountDetails();
+    }
 }

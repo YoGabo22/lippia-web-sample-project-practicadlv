@@ -29,7 +29,7 @@ Feature: Shop
 
 
   @tpFinal
-    @ShopBasketReceived @Do
+    @ShopBasketReceived
   Scenario Outline: Shop-Add to Basket-View Basket through Item link
     When The client click the Add to Basket button of <BookName> in Shop Page
     And The client click on Basket button in Shop Page
