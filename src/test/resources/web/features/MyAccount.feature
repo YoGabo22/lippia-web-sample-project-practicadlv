@@ -13,7 +13,7 @@ Feature: MyAccount
     And The client click the Account Details button
     Then The client is in Account Details page
 
-  @AccountLogOut @Do
+  @AccountLogOut
   Scenario: My Accounts-Log-Out
     When The client enters 'gaboacademy@gmail.com' in the email textbox
     And The client enters '!ClaveSegura2025' in the password textbox
