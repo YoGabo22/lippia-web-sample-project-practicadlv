@@ -40,7 +40,7 @@ public class ProductConstants {
     public static final String TOWN_TEXTBOX = "xpath://*[@id=\"billing_city\"]";
     public static final String POSTCODE_TEXTBOX = "xpath://*[@id=\"billing_postcode\"]";
     public static final String DIRECT_BANK_TRANSFER_BUTTON = "xpath://input[@id='payment_method_bacs']";
-    public static final String CHECK_PAYMENT_BUTTON = "xpath://input[@id='payment_method_cheque']";
+    public static final String CHECK_PAYMENT_BUTTON = "xpath://input[@id='payment_method_cheque']"; //
     public static final String CASH_ON_DELIVERY_BUTTON = "xpath://input[@id='payment_method_cod']";
     public static final String PAYPAL_EXPRESS_CHECKOUT_BUTTON = "xpath://input[@id='payment_method_ppec_paypal']";
     public static final String CHECKOUT_COUPON_BUTTON = "xpath://*[@id=\"page-35\"]/div/div[1]/div[2]/a";
@@ -56,10 +56,11 @@ public class ProductConstants {
     public static final String MASTERING_JAVASCRIPT_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[6]/a[2]";
     public static final String JS_DATA_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[5]/a[2]";
     public static final String THINKING_IN_SHOP_BUTTON = "xpath://*[@id=\"content\"]/ul/li[8]/a[2]";
-    public static final String BASKET_MENU_BUTTON = "xpath://*[@id=\"wpmenucartli\"]/a";
+    public static final String BASKET_MENU_BUTTON = "xpath:(//a[@title='View Basket'])[last()]";
     public static final String CHECKOUT_TAXES_VALUE = "xpath://*[@id=\"order_review\"]/table/tfoot/tr[2]/td/span";
     public static final String COUNTRY_TEXTBOX = "xpath://*[@id=\"select2-chosen-1\"]";
     public static final String ACCOUNT_DETAILS_BUTTON = "xpath://*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a";
     public static final String CURRENT_PASSWORD_LABEL = "xpath://*[@id=\"page-36\"]/div/div[1]/div/form/fieldset/p[1]/label";
     public static final String LOGIN_MESSAGE = "xpath://*[@id=\"page-36\"]/div/div[1]/div/p[1]";
+    public static final String COUNTRY_SEARCH_TEXTBOX = "xpath://*[@id=\"s2id_autogen1_search\"]";
 }

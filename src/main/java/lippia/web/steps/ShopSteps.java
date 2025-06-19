@@ -37,7 +37,7 @@ public class ShopSteps extends PageSteps {
 
     @When("The client click the Add to Basket button of (.*) in Shop Page")
     public void theClientClickTheAddToBasketButtonOfBookNameInShopPage(String shopBook) {
-        ProductService.clickSopBook(shopBook);
+        ProductService.clickShopBook(shopBook);
     }
 
     @And("The client click on Basket button in Shop Page")

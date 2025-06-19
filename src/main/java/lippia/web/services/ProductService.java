@@ -1,10 +1,17 @@
 package lippia.web.services;
 
+import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.WebActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.ProductConstants;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import java.sql.Driver;
+
+import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 
 public class ProductService {
@@ -227,33 +234,89 @@ public class ProductService {
         var postCode = WebActionManager.getElement(ProductConstants.POSTCODE_TEXTBOX);
         postCode.clear();
         postCode.sendKeys("5500");
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void clickPayment(String payment) {
         switch (payment) {
             case "Direct Bank Transfer":
+                WebActionManager.waitVisibility(ProductConstants.DIRECT_BANK_TRANSFER_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.DIRECT_BANK_TRANSFER_BUTTON).click();
                 break;
             case "Check Payments":
+                WebActionManager.waitVisibility(ProductConstants.CHECK_PAYMENT_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.CHECK_PAYMENT_BUTTON).click();
                 break;
             case "Cash on Delivery":
+                WebActionManager.waitVisibility(ProductConstants.CASH_ON_DELIVERY_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.CASH_ON_DELIVERY_BUTTON).click();
                 break;
             case "PayPal Express Checkout":
+                WebActionManager.waitVisibility(ProductConstants.PAYPAL_EXPRESS_CHECKOUT_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.PAYPAL_EXPRESS_CHECKOUT_BUTTON).click();
                 break;
+
+        }
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void checkCuponClick() {
+
+
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_UP);
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_UP);
+        WebActionManager.waitVisibility(ProductConstants.CHECKOUT_COUPON_BUTTON);
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebActionManager.getElement(ProductConstants.CHECKOUT_COUPON_BUTTON).click();
-        Assert.assertTrue(WebActionManager.getElement(ProductConstants.CHECKOUT_COUPON_TEXTBOX).isDisplayed());
+
+
+        WebActionManager.waitVisibility(ProductConstants.CHECKOUT_COUPON_TEXTBOX);
+        Assert.assertTrue(WebActionManager.getElement(ProductConstants.CHECKOUT_COUPON_TEXTBOX).isEnabled());
 
 
     }
 
     public static void clickPlaceOrder() {
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+        WebActionManager.waitVisibility(ProductConstants.PLACE_ORDER_BUTTON);
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebActionManager.getElement(ProductConstants.PLACE_ORDER_BUTTON).click();
     }
 
@@ -274,51 +337,145 @@ public class ProductService {
         Assert.assertTrue(WebActionManager.getElement(ProductConstants.EMAIL_TEXTBOX).isEnabled());
     }
 
-    public static void clickSopBook(String shopBook) {
+    public static void clickShopBook(String shopBook) {
         switch (shopBook) {
             case "Android Quick Start Guide":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.ANDROID_QUICK_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.ANDROID_QUICK_SHOP_BUTTON).click();
                 break;
             case "Functional Programming in JS":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.FUNCTIONAL_PROGRAMMING_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.FUNCTIONAL_PROGRAMMING_SHOP_BUTTON).click();
                 break;
             case " HTML5 Forms":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.HTML5_FORMS_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.HTML5_FORMS_SHOP_BUTTON).click();
                 break;
             case "HTML5 WebApp Develpment":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.HTML5_WEBAPP_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.HTML5_WEBAPP_SHOP_BUTTON).click();
                 break;
             case "Selenium Ruby ":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.SELENIUM_RUBY_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.SELENIUM_RUBY_SHOP_BUTTON).click();
                 break;
             case "Mastering JavaScript":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.MASTERING_JAVASCRIPT_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.MASTERING_JAVASCRIPT_SHOP_BUTTON).click();
                 break;
             case "JS Data Structures and Algorithm":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.JS_DATA_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.JS_DATA_SHOP_BUTTON).click();
                 break;
             case "Thinking in HTML ":
+                DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+                WebActionManager.waitVisibility(ProductConstants.THINKING_IN_SHOP_BUTTON);
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 WebActionManager.getElement(ProductConstants.THINKING_IN_SHOP_BUTTON).click();
                 break;
         }
     }
 
     public static void clickBasket() {
-        WebActionManager.getElement(ProductConstants.BASKET_MENU_BUTTON).click();
+
+        WebActionManager.waitVisibility(ProductConstants.BASKET_MENU_BUTTON);
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+       WebActionManager.getElement(ProductConstants.BASKET_MENU_BUTTON).click();
     }
 
     public static void checkDefaultTaxes() {
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
         PrevTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
 
     }
 
     public static void selectArgentinaCountry() {
-        WebActionManager.getElement(ProductConstants.COUNTRY_TEXTBOX).sendKeys("Argentina" + Keys.RETURN);
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_UP);
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_UP);
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.getElement(ProductConstants.COUNTRY_TEXTBOX).click();
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.getElement(ProductConstants.COUNTRY_SEARCH_TEXTBOX).click();
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebActionManager.getElement(ProductConstants.COUNTRY_SEARCH_TEXTBOX).sendKeys("Argentina" + Keys.RETURN);
+
+
     }
 
     public static void checkFinalTaxes() {
-        NewTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
-        Assert.assertNotEquals(PrevTaxes, NewTaxes);
+        DriverManager.getDriverInstance().findElement(By.xpath("/html/body")).sendKeys(Keys.PAGE_DOWN);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }        NewTaxes = WebActionManager.getText(ProductConstants.CHECKOUT_TAXES_VALUE);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }        Assert.assertNotEquals(PrevTaxes, NewTaxes);
     }
 
     public static void clickAccountDetails() {

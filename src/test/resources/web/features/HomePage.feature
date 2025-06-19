@@ -89,26 +89,29 @@ Feature: HomePage
     And The client click the Proceed to Checkout button
     And The client fill his details in billing details form
     And select the <payment> method
-    And The coupon textbox is clickable
     And The client click the Place Order button
     Then The client is in the Order Received page
 
     Examples:
-      | BookName      | payment                 |
-      | Selenium Ruby | Direct Bank Transfer    |
-      | Selenium Ruby | Check Payments          |
-      | Selenium Ruby | Cash on Delivery        |
-      | Selenium Ruby | PayPal Express Checkout |
+      | BookName      | payment              |
+      | Selenium Ruby | Direct Bank Transfer |
+      | Selenium Ruby | Check Payments       |
+      | Selenium Ruby | Cash on Delivery     |
+
+    Examples:
+      | BookName             | payment              |
+      | Thinking in HTML     | Direct Bank Transfer |
+      | Thinking in HTML     | Check Payments       |
+      | Thinking in HTML     | Cash on Delivery     |
+      | Mastering JavaScript | Direct Bank Transfer |
+      | Mastering JavaScript | Check Payments       |
+      | Mastering JavaScript | Cash on Delivery     |
 
     Examples:
       | BookName             | payment                 |
-      | Thinking in HTML     | Direct Bank Transfer    |
-      | Thinking in HTML     | Check Payments          |
-      | Thinking in HTML     | Cash on Delivery        |
-      | Thinking in HTML     | PayPal Express Checkout |
-      | Mastering JavaScript | Direct Bank Transfer    |
-      | Mastering JavaScript | Check Payments          |
-      | Mastering JavaScript | Cash on Delivery        |
+      #PayPal siempre falla, porque no existe una conección real para un cobro real
+      | Selenium Ruby        | PayPal Express Checkout |
       | Mastering JavaScript | PayPal Express Checkout |
-    #Metodo de pago PayPal no funciona, algo esperable de una página que simula una compra como tal
+      | Thinking in HTML     | PayPal Express Checkout |
+
 
