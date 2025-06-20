@@ -41,7 +41,7 @@ Feature: HomePage
       | Thinking in HTML     | 4             |
       | Mastering JavaScript | 4             |
 
-  @tpFinal
+  @TPFinal
 
 
     @ArrivalsAddBasketCheckoutGateway
@@ -107,6 +107,7 @@ Feature: HomePage
       | Mastering JavaScript | Check Payments       |
       | Mastering JavaScript | Cash on Delivery     |
 
+    @Ignore
     Examples:
       | BookName             | payment                 |
       #PayPal siempre falla, porque no existe una conección real para un cobro real

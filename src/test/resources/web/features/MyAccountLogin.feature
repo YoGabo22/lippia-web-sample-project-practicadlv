@@ -27,7 +27,7 @@ Feature: MyAccountLogin
     And The client click the Login button
     Then Go to Home Page button
 
-  @tpFinal
+  @TPFinal
 
 
   @LoginErrorCaseSensitive

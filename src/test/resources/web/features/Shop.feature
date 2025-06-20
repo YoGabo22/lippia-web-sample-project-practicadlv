@@ -29,7 +29,7 @@ Feature: Shop
       | Sort by price: high to low |
 
 
-  @tpFinal
+  @TPFinal
     @ShopBasketReceived
   Scenario Outline: Shop-Add to Basket-View Basket through Item link
     When The client click the Add to Basket button of <BookName> in Shop Page
@@ -76,6 +76,7 @@ Feature: Shop
       | Thinking in HTML                 | Cash on Delivery        |
       | Thinking in HTML                 | PayPal Express Checkout |
 
+    @Ignore
      #PayPal siempre falla, porque no existe una conección real para un cobro real
     Examples:
       | BookName                         | payment                 |
@@ -103,7 +104,6 @@ Feature: Shop
     Then The client check the taxes are lower in India
 
 
-    @Do
     Examples:
       | BookName                  |
       | Android Quick Start Guide |
